@@ -1,0 +1,103 @@
+import 'package:app/order_details.dart';
+import 'package:flutter/material.dart';
+
+class OrdersPage extends StatelessWidget {
+  static String routeName = 'orders';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        actions: [
+          MaterialButton(
+            onPressed: () {},
+            child: Text('Available'),
+          )
+        ],
+        title: Text(
+          'Orders',
+          textAlign: TextAlign.start,
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      body: Container(
+        margin: EdgeInsets.all(5),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                MaterialButton(
+                  onPressed: () {},
+                  textColor: Colors.red,
+                  child: Text('Confirmed'),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                MaterialButton(
+                  onPressed: () {},
+                  color: Colors.green,
+                  textColor: Colors.white,
+                  child: Text('Completed'),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.all(30),
+              color: Colors.blueGrey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Hire'),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Divider(
+                    height: 5,
+                    color: Colors.white,
+                  ),
+                  ListTile(
+                    tileColor: Colors.white,
+                    title: Text('Hire ID'),
+                    trailing: Text('001'),
+                  ),
+                  ListTile(
+                    tileColor: Colors.white,
+                    title: Text('Time'),
+                    trailing: Text('2021/02/12 10.25 AM'),
+                  ),
+                  ListTile(
+                    tileColor: Colors.white,
+                    title: Text('Location'),
+                    trailing: Text('Kinigama road, Bandarawela'),
+                  ),
+                  Divider(
+                    height: 5,
+                    color: Colors.white,
+                  ),
+                  Container(
+                    alignment: Alignment.bottomRight,
+                    child: MaterialButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed(OrderDetailsPage.routeName);
+                      },
+                      textColor: Colors.white,
+                      child: Text('View Details'),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
